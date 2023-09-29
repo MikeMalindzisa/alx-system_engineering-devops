@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+SCRIPT_PATH="./manage_my_process"
+
+# Handle command-line arguments
+case "$1" in
+    start)
+        $SCRIPT_PATH start
+        ;;
+    stop)
+        $SCRIPT_PATH stop
+        ;;
+    restart)
+        $SCRIPT_PATH restart
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+        ;;
+esac
