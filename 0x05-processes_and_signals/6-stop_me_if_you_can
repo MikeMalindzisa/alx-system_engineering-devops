@@ -6,6 +6,3 @@ if pgrep -f "4-to_infinity_and_beyond" > /dev/null; then
     # If the process is running, stop it using pkill
     pkill -f "4-to_infinity_and_beyond"
     echo "Terminated"
-else
-    echo "Process 4-to_infinity_and_beyond is not running."
-fi
