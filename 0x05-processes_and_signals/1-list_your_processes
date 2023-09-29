@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# list of currently running processes
+
+
+
+# Define column headers
+printf "%-10s %-6s %-5s %-10s %-10s %-6s %-6s %-8s %-8s %-8s %-20s\n" "USER" "PID" "%CPU" "%MEM" "VSZ" "RSS" "TTY" "STAT" "START" "TIME" "COMMAND"
+
+# Use 'ps' command to list all processes in a tree format, including processes without TTY, and parse the output
+ps ax --format user,pid,%cpu,%mem,vsz,rss,tty,stat,lstart,time,command --forest | awk 'NR>1 {
+    printf "%-10s %-6s %-5s %-10s %-10s %-6s %-6s %-8s %-8s %-8s %-20s\n", $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11
+}'
