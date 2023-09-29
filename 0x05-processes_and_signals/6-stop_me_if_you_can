@@ -3,4 +3,3 @@
 
 # If the process is running, stop it using pkill
 pkill -f "4-to_infinity_and_beyond"
-echo "Terminated"
