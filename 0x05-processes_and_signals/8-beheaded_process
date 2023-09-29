@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# The innevitability of death to 7-highlander
+
+pkill -f -SIGKILL 7-highlander
