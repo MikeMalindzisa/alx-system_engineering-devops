@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Y U No love me, I'm tryna go to infinity and beyond
+
+terminal_assasin() {
+    echo "I hate the kill command"
+    sudo rm -f /var/run/myscript.pid
+    exit 0
+}
+
+# Function to handle SIGINT signal
+show_some_love() {
+    echo "Y U no love me?!"
+}
+
+trap 'terminal_assasin' SIGTERM SIGQUIT
+
+trap 'show_some_love' SIGINT
+
+echo $$ > /var/run/myscript.pid
+
+while true; do
+    echo "To infinity and beyond indefinitely"
+    sleep 2
+done
