@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 # Alt-Halt to infinity and beyond
 
-# Check if the "4-to_infinity_and_beyond" process is running
-if pgrep -f "4-to_infinity_and_beyond" > /dev/null; then
-    # If the process is running, stop it using pkill
-    pkill -f "4-to_infinity_and_beyond"
-    echo "Terminated"
+# If the process is running, stop it using pkill
+pkill -f "4-to_infinity_and_beyond"
+echo "Terminated"
