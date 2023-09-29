@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 # Invicible self to infinity and beyond
 
-terminate() {
+vibranium_shield() {
     echo "I am invincible!!!"
-    exit 0
 }
 
 # Set the terminate function to be executed on SIGTERM
-trap 'terminate' SIGTERM
+trap 'vibranium_shield' SIGTERM
 
 # Infinite loop
 while true; do
