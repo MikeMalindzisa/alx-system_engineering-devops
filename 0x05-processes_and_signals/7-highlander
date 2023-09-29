@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Invicible self to infinity and beyond
+
+terminate() {
+    echo "I am invincible!!!"
+    exit 0
+}
+
+# Set the terminate function to be executed on SIGTERM
+trap 'terminate' SIGTERM
+
+# Infinite loop
+while true; do
+    echo "To infinity and beyond"
+    sleep 2
+done
