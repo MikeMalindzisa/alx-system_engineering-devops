@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This Bash script lists and displays the contents
+# of the current directory in list format.
+# It extracts and displays only the part of the
+# filename that comes after the first dash.
+
+for filename in *; do
+  if [[ -f "$filename" ]]; then
+    part_after_dash=$(echo "$filename" | cut -d '-' -f2)
+    echo "$part_after_dash"
+  fi
+done
