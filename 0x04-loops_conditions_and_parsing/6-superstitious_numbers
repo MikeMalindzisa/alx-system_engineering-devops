@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# This Bash script displays numbers from 1 to 20
+# and provides special messages for specific iterations
+# using a while loop and a case statement.
+
+count=1
+
+while [ $count -le 20 ]
+do
+  echo "$count"
+  case $count in
+    4) echo "bad luck from China";;
+    9) echo "bad luck from Japan";;
+    17) echo "bad luck from Italy";;
+  esac
+  ((count++))
+done
