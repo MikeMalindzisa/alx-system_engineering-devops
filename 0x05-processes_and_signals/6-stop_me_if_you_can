@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-# Alt-Halt to infinity and beyond
-
-# If the process is running, stop it using pkill
-pkill -f "4-to_infinity_and_beyond"
