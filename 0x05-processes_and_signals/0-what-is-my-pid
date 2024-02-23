@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-
 # This script sleeps for 5 seconds in the background and prints its PID.
+
 sleep 5 &
 echo "$!"
-
