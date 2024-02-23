@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 
 # This script sleeps for 2 seconds in the background and prints its PID.
 
