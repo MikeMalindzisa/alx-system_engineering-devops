@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script finds and kills processes with the pattern "4-to_infinity_and_beyond" using pkill.
+
+pattern="4-to_infinity_and_beyond"
+
+while pgrep -f "$pattern" > /dev/null; do
+  pkill -f "$pattern"
+  sleep 1
+done
+
