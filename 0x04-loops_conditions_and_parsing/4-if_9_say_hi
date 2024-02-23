@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Script to display "Best School" 10 times and "Hi" after the 9th iteration using a while loop and if statement
+
+# Initialize the counter variable i to 1
+i=1
+
+# Start of the while loop: Continue looping until i is greater than 10
+while [ $i -le 10 ]
+do
+    # Inside the loop: Print "Best School" to the standard output
+    echo "Best School"
+
+    # Inside the loop: Check if i is equal to 9
+    if [ $i -eq 9 ]
+    then
+        # If true, print "Hi" to the standard output
+        echo "Hi"
+    fi
+
+    # Increment the counter variable i
+    ((i++))
+done
+

@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Script to display numbers from 1 to 20 and specific messages for certain iterations using a while loop and case statement
+
+# Initialize the counter variable i to 1
+i=1
+
+# Start of the while loop: Continue looping until i is greater than 20
+while [ $i -le 20 ]
+do
+    # Inside the loop: Print the current value of i
+    echo "$i"
+
+    # Use the case statement to check the value of i
+    case $i in
+        # If i is 4, print "bad luck from China"
+        "4") echo "bad luck from China";;
+        
+        # If i is 9, print "bad luck from Japan"
+        "9") echo "bad luck from Japan";;
+
+        # If i is 17, print "bad luck from Italy"
+        "17") echo "bad luck from Italy";;
+    esac
+
+    # Increment the counter variable i
+    ((i++))
+done
+

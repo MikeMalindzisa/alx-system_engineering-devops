@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Script to display "Best School" 10 times using an until loop
+
+# Initialize the counter variable i to 1
+i=1
+
+# Start of the until loop: Continue looping until i is greater than 10
+until [ $i -gt 10 ]
+do
+    # Inside the loop: Print "Best School" to the standard output
+    echo "Best School"
+
+    # Increment the counter variable i
+    ((i++))
+done
+
