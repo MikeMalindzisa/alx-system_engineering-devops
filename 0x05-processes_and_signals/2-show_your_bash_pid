@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script lists all bash processes and disable SC2009 (Useless cat) warning for the ps command.
+# shellcheck disable=SC2009
+ps -auxf | grep bash
+
