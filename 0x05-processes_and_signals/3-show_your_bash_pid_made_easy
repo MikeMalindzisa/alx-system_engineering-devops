@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script lists all bash processes using 'pgrep -l'.
+
+pgrep -l bash
+
