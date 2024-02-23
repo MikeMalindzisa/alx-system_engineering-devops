@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# This script sleeps for 2 seconds in the background and prints its PID.
+
+sleep 2 & _pid=$!
+
+echo "$_pid"
+
