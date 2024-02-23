@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Script to parse and display Apache log information
+
+# Specify the file path
+log_file="apache-access.log"
+
+# Use awk to print the IP address and HTTP status code from each line
+# Sort the output
+# Count occurrences of each unique combination
+# Sort in descending order by count
+awk -F' ' '{ print $1, $9}' "$log_file" | sort | uniq -c | sort -nr
+

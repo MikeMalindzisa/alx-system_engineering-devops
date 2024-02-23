@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Script to display numbers from 1 to 100 with FizzBuzz conditions
+
+# Loop through numbers from 1 to 100
+for num in {1..100}
+do
+  # Check if the number is a multiple of both 3 and 5
+  if (( num % 3 == 0 && num % 5 == 0 ))
+  then
+    echo "FizzBuzz"
+  # Check if the number is a multiple of 3
+  elif (( num % 3 == 0 ))
+  then
+    echo "Fizz"
+  # Check if the number is a multiple of 5
+  elif (( num % 5 == 0 ))
+  then
+    echo "Buzz"
+  # If none of the conditions are met, display the number itself
+  else
+    echo "$num"
+  fi
+done
+

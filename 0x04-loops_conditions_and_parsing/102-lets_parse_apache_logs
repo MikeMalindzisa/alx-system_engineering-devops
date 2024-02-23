@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Script to parse Apache log files in list format
+
+# Specify the file path
+log_file="apache-access.log"
+
+# Use awk to print the first and ninth fields from each line, separated by spaces
+awk -F' ' '{ print $1, $9}' "$log_file"
+
