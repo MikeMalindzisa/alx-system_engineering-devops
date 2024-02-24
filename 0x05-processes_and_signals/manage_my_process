@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script continuously appends the message "I am alive!" to a file named "my_process" in the "/tmp" directory every 2 seconds.
+
+file="/tmp/my_process"
+
+# Infinite loop
+while true; do
+  echo "I am alive!" >> "$file"
+  sleep 2
+done
+

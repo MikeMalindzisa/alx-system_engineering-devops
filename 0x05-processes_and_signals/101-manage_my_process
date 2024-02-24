@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+# This script manages the "manage_my_process" script by providing options to start, stop, or restart it.
+
+# Get the command provided as an argument
+command="$1"
+
+# Check if a valid command is provided
+if [ -z "$command" ]; then
+  echo "Usage: $0 {start|stop|restart}"
+  exit 1
+fi
+
+# Start the manage_my_process script
+if [ "$command" == "start" ]; then
+  # Start the process in the background
+  bash ./manage_my_process &
+
+  # Save the PID (Process ID) to a file
+  echo "$!" > /var/run/my_process.pid
+
+  # Display a message indicating that manage_my_process has started
+  echo "manage_my_process started"
+
+# Stop the manage_my_process script
+elif [ "$command" == "stop" ]; then
+  # Check if the PID file exists and if manage_my_process is running
+  if [ -e "/var/run/my_process.pid" ]; then
+    # Use pkill to forcefully stop manage_my_process
+    pkill -f './manage_my_process'
+
+    # Remove the PID file
+    rm /var/run/my_process.pid
+
+    # Display a message indicating that manage_my_process has stopped
+    echo "manage_my_process stopped"
+  else
+    # Display a message if manage_my_process is not running
+    echo "manage_my_process is not running"
+  fi
+
+# Restart the manage_my_process script
+elif [ "$command" == "restart" ]; then
+  # Stop manage_my_process
+  "$0" stop >& /dev/null
+
+  # Start manage_my_process
+  "$0" start >& /dev/null
+
+  # Display a message indicating that manage_my_process has been restarted
+  echo "manage_my_process restarted"
+
+# Display usage information for invalid commands
+else
+  echo "Usage: $0 {start|stop|restart}" 
+  exit 1
+fi
+
