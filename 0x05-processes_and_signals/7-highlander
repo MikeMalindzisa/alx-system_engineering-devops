@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This script demonstrates the use of a trap to catch the SIGTERM signal.
+# When a SIGTERM signal is received (e.g., by pressing Ctrl+C), the script
+# responds by printing the message "I am invincible!!!" before exiting.
+
+# Set up trap to handle SIGTERM
+trap "echo I am invincible!!!" SIGTERM
+
+# Infinite loop printing a message
+while true; do
+  echo "To infinity and beyond"
+  sleep 2
+done
+
