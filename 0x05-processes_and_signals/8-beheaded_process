@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script forcefully terminates processes with the pattern "7-highlander."
+# It uses pgrep to find the process IDs (PIDs) based on the specified pattern
+# and then uses xargs with kill -9 to immediately terminate these processes
+# with the SIGKILL signal, preventing them from performing any cleanup.
+
+# Find and forcefully terminate processes with the pattern "7-highlander"
+pgrep -f "7-highlander" | xargs kill -9
+
