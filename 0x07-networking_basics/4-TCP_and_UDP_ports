@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Check if the netstat command is available
+if ! command -v netstat &> /dev/null; then
+    echo "netstat command not found. Installing net-tools..."
+    apt-get update
+    apt-get install -y net-tools
+fi
+# Display listening ports, sockets, and PID
+netstat -lp
