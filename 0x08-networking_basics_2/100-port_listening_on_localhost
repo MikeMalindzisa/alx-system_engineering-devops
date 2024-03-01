@@ -1,11 +1,4 @@
 #!/usr/bin/env bash
-
-# Check if the nc command is available
-if ! command -v nc &> /dev/null; then
-    echo "netcat (nc) command not found. Please install netcat."
-    exit 1
-fi
-
 # Port number
 PORT=98
 
