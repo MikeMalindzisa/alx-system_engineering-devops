@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-# Port number
-PORT=98
-
-# Start netcat in listening mode on localhost and port
-nc -l localhost -p $PORT
+# Start netcat in listening mode on localhost and port 98
+nc -l localhost 98
 
