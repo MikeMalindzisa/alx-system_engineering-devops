@@ -1,12 +1,4 @@
 #!/usr/bin/env bash
-
-# Check if the ip command is available, install if not
-if ! command -v ip &> /dev/null; then
-    echo "ip command not found. Installing iproute2..."
-    apt-get update
-    apt-get install -y iproute2
-fi
-
 # Use ip to get information about network interfaces
 ip -4 addr show | grep -oP 'inet \K[\d.]+'
 
