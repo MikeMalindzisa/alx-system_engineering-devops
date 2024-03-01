@@ -1,11 +1,5 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 # The script configures an Ubunto server DNS records
-
-# Check if the script is running with root privileges
-if [ "$EUID" -ne 0 ]; then
-    echo "Please run as root or using sudo."
-    exit 1
-fi
 
 # Backup the original hosts file
 cp /etc/hosts /etc/hosts.backup
