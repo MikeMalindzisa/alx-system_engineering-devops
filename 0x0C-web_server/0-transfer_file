@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# Define usage message
+msg="Usage: $0 PATH_TO_FILE IP USERNAME [PATH_TO_SSH_KEY]"
+
+# Check if all required arguments are provided
+if [ "$#" -lt 3 ]; then
+    echo "$msg"
+    exit 1
+fi
+
+# Assign arguments to variables
+file_path="$1"
+ip="$2"
+username="$3"
+ssh_key="$4"
+
+# Check if PATH_TO_SSH_KEY is provided, if not, set to default
+if [ -n "$ssh_key" ]; then
+    scp_options="-i $ssh_key"
+else
+    scp_options=""
+fi
+
+# Construct SCP command
+scp_command="scp $scp_options -o StrictHostKeyChecking=no \"$file_path\" \"$username@$ip:~\""
+
+# Execute SCP command
+if eval "$scp_command"; then
+    echo "File transferred successfully."
+else
+    echo "Error: File transfer failed."
+    exit 1
+fi
+
