@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Script to configure Nginx to include a custom HTTP response header
+
+# Install Nginx if not already installed
+sudo apt-get update
+sudo apt-get install -y nginx
+
+# Set the custom HTTP response header in the Nginx configuration
+sudo sed -i '/^\s*server_name/ a \\n\tadd_header X-Served-By $hostname;' /etc/nginx/sites-available/default
+
+# Restart Nginx to apply the changes
+sudo systemctl restart nginx
