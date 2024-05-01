@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
+#configures Nginx to run at port 80
+
+# Check if Nginx is installed
+if ! dpkg-query -W nginx >/dev/null 2>&1; then
+    # Install Nginx if not already installed
+    apt-get update -y -qq
+    apt-get install -y nginx
+fi
+
 # Replace port 8080 with port 80 in the Nginx default configuration
 sed -i 's/\b8080\b/80/g' /etc/nginx/sites-enabled/default
 
-service nginx restart
+# Restart Nginx to apply the changes
+systemctl restart nginx
+
