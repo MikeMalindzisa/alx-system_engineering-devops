@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# Short and sweet
-
-sed -i 's/user\s*[^;]*/user nginx;/' /etc/nginx/nginx.conf
-sed -i 's/listen\s*80/listen 8080/' /etc/nginx/sites-enabled/default
-service nginx restart
+# Short and Sweet
+chmod 644 /etc/nginx/nginx.conf
+sed -Ei 's/\s*#?\s*user .*/user nginx;/' /etc/nginx/nginx.conf
+sed -Ei 's/(listen (\[::\]:)?80) /\180 /' /etc/nginx/sites-enabled/default
+pkill apache2
+su nginx -s /bin/bash -c 'service nginx restart'
