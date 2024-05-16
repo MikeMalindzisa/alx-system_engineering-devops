@@ -1,0 +1,15 @@
+echo -e "Init System update...\n"
+sudo apt-get update
+echo -e "Installing and setting up firewall..\n"
+sudo apt-get install -y ufw
+sudo ufw default allow outgoing
+sudo ufw default deny incoming
+# Ports Config
+echo -e "Unlocking SSH port 22\n"
+sudo ufw allow 22
+echo -e "Unlocking HTTPS SSL port 443\n"
+sudo ufw allow 443
+echo -e "Unlocking HTTP port 80\n"
+sudo ufw allow 80
+echo -e "Enabling firewall\n"
+sudo ufw enable
