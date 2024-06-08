@@ -1,9 +1,7 @@
-# Fixes bad `phpp` extensions to `php` in wp-settings.php
+# Ensure correct PHP extension in wp-settings.php by replacing 'phpp' with 'php'
 
+# Define an exec resource to execute a command
 exec { 'fix_wordpress_extension':
-  command     => 'sed -i "s/phpp/php/g" /var/www/html/wp-settings.php',
-  path        => '/usr/bin:/bin',
-  onlyif      => 'grep -q "phpp" /var/www/html/wp-settings.php',
-  refreshonly => true,
-  notify      => Service['apache2'],
+  # Command to replace 'phpp' with 'php' in wp-settings.php using sed
+  command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php',
 }
